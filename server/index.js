@@ -11,6 +11,11 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+// Root route for health check
+app.get('/', (req, res) => {
+  res.json({ status: 'Yasir Motors API is running', version: '1.0.0' });
+});
+
 // --- VEHICLE ROUTES ---
 
 // Get all vehicles
