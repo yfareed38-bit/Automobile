@@ -1,0 +1,112 @@
+.financing-page {
+  padding-top: 80px;
+}
+
+.calculator-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .calculator-wrapper {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.calc-inputs h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.val-display {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-top: 0.5rem;
+}
+
+.calc-result {
+  text-align: center;
+}
+
+.emi-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  margin: 0 auto 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--accent-primary);
+  background: radial-gradient(circle, rgba(0, 210, 255, 0.1), transparent);
+}
+
+.emi-label {
+  color: var(--text-dim);
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 0.75rem;
+}
+
+.emi-value {
+  font-size: 3rem;
+  color: white;
+  margin-top: 0.5rem;
+}
+
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.bank-card {
+  padding: 2.5rem;
+  text-align: center;
+}
+
+.bank-icon {
+  color: var(--accent-primary);
+  margin-bottom: 1.5rem;
+}
+
+.insurance-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .insurance-box {
+    grid-template-columns: 1.5fr 1fr;
+  }
+}
+
+.ins-list {
+  margin: 2rem 0;
+}
+
+.ins-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.ins-list li svg {
+  color: var(--accent-primary);
+}
+
+.chart-icon {
+  color: var(--accent-primary);
+  opacity: 0.5;
+}

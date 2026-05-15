@@ -1,0 +1,103 @@
+.test-drive-page {
+  padding-top: 80px;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  padding: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .booking-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+.booking-form-side h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+}
+
+.form-section {
+  margin-bottom: 3rem;
+}
+
+.form-section h3 {
+  font-size: 1.125rem;
+  color: var(--accent-primary);
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-with-icon {
+  position: relative;
+  width: 100%;
+}
+
+.input-with-icon svg {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-dim);
+}
+
+.input-with-icon input, .input-with-icon select {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  color: white;
+  border-radius: var(--border-radius-md);
+  outline: none;
+}
+
+.input-with-icon input:focus, .input-with-icon select:focus {
+  border-color: var(--accent-primary);
+}
+
+.td-submit {
+  margin-top: 1rem;
+  padding: 1.25rem;
+}
+
+.booking-info-side {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.info-block h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.info-block ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.info-block li {
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.info-block li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+}
+
+.info-block p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

@@ -1,0 +1,4 @@
+.about-page { padding-top: 80px; }
+.about-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+.about-grid h2 { color: var(--accent-primary); margin-bottom: 1.5rem; }
+.about-grid p { color: var(--text-secondary); line-height: 1.8; }
