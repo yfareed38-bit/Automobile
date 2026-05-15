@@ -20,6 +20,10 @@ import Tools from './pages/Tools';
 import ChatWidget from './components/ChatWidget';
 import WhatsAppButton from './components/WhatsAppButton';
 import CompareTray from './components/CompareTray';
+import AdminLayout from './pages/admin/AdminLayout';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import AdminInventory from './pages/admin/AdminInventory';
+import AdminInquiries from './pages/admin/AdminInquiries';
 
 function App() {
   return (
@@ -44,6 +48,16 @@ function App() {
             <Route path="/compare" element={<Compare />} />
             <Route path="/configure/:id" element={<Configurator />} />
             <Route path="/tools" element={<Tools />} />
+            
+            {/* Admin Routes */}
+            <Route path="/admin" element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="inventory" element={<AdminInventory />} />
+              <Route path="inquiries" element={<AdminInquiries />} />
+              <Route path="blog" element={<div>Blog CMS (Coming Soon)</div>} />
+              <Route path="analytics" element={<div>Analytics Dashboard (Coming Soon)</div>} />
+              <Route path="seo" element={<div>SEO Manager (Coming Soon)</div>} />
+            </Route>
           </Routes>
         </main>
         <Footer />

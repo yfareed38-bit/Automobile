@@ -1,0 +1,60 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Vehicle {
+  id           Int      @id @default(autoincrement())
+  name         String
+  category     String
+  price        Float
+  specs        String
+  description  String
+  image        String
+  tagline      String?
+  featured     Boolean  @default(false)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  inquiries    Inquiry[]
+}
+
+model Inquiry {
+  id           Int      @id @default(autoincrement())
+  customerName String
+  email        String
+  phone        String?
+  message      String
+  status       String   @default("pending") // pending, read, replied
+  vehicleId    Int?
+  vehicle      Vehicle? @relation(fields: [vehicleId], references: [id])
+  createdAt    DateTime @default(now())
+}
+
+model BlogPost {
+  id             Int      @id @default(autoincrement())
+  title          String
+  content        String
+  author         String
+  excerpt        String
+  image          String
+  seoTitle       String?
+  seoDescription String?
+  published      Boolean  @default(true)
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model Analytics {
+  id        Int      @id @default(autoincrement())
+  pageViews Int      @default(0)
+  leads     Int      @default(0)
+  clicks    Int      @default(0)
+  date      DateTime @unique @default(now())
+}
