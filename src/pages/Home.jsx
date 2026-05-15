@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Zap, Shield, Award, ChevronRight } from 'lucide-react';
+import { 
+  ArrowRight, ShieldCheck, Zap, Star, 
+  Rotate3d, Smartphone, MessageSquare, Calculator 
+} from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Home.css';
 
@@ -106,8 +109,40 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="features section-padding bg-alt">
+      {/* Premium Features Highlights */}
+      <section className="premium-features section-padding">
+        <div className="container">
+          <div className="section-header text-center">
+            <span className="subtitle">Future of Mobility</span>
+            <h2>Experience the <span className="gradient-text">Premium Difference</span></h2>
+          </div>
+          <div className="features-grid">
+            <div className="glass-card text-center">
+              <Rotate3d size={40} className="accent-text" />
+              <h3>360° Visualizer</h3>
+              <p>Interact with our models in high-fidelity 3D before you visit.</p>
+            </div>
+            <div className="glass-card text-center">
+              <Smartphone size={40} className="accent-text" />
+              <h3>AR Showroom</h3>
+              <p>Project your favorite Yasir model into your own driveway.</p>
+            </div>
+            <div className="glass-card text-center">
+              <Calculator size={40} className="accent-text" />
+              <h3>Smart Tools</h3>
+              <p>Calculate EV savings and financing with real-time PKR rates.</p>
+            </div>
+            <div className="glass-card text-center">
+              <MessageSquare size={40} className="accent-text" />
+              <h3>AI Assistant</h3>
+              <p>24/7 automated support for all your automotive inquiries.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Vehicles Section */}
+      <section className="featured-vehicles section-padding bg-alt">
         <div className="container">
           <div className="features-grid">
             <div className="feature-item">

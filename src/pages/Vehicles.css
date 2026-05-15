@@ -161,6 +161,9 @@
 
 .action-btn.active {
   color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.15);
+  border-color: #ff4d4d;
+  box-shadow: 0 0 10px rgba(255, 77, 77, 0.3);
 }
 
 .vehicle-info {

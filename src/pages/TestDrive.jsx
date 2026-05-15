@@ -8,8 +8,8 @@ const TestDrive = () => {
       <div className="page-header section-padding">
         <div className="container">
           <span className="subtitle">First Hand Experience</span>
-          <h1>Book a <span className="gradient-text">Test Drive</span></h1>
-          <p>Feel the power and precision of a Yasir. Select your model and preferred time.</p>
+          <h1>Book an <span className="gradient-text">Appointment</span></h1>
+          <p>Schedule a test drive or service consultation with our experts.</p>
         </div>
       </div>
 

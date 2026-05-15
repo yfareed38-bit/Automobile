@@ -37,6 +37,25 @@ export const AppProvider = ({ children }) => {
     setCompareList(prev => prev.filter(v => v.id !== id));
   };
 
+  const translations = {
+    EN: {
+      inventory: "Our Inventory",
+      discover: "Discover the perfect vehicle that matches your lifestyle.",
+      explore: "Explore",
+      compare: "Compare"
+    },
+    UR: {
+      inventory: "ہماری انوینٹری",
+      discover: "وہ بہترین گاڑی دریافت کریں جو آپ کے طرز زندگی سے مطابقت رکھتی ہو۔",
+      explore: "دریافت کریں",
+      compare: "موازنہ کریں"
+    }
+  };
+
+  const t = (key) => {
+    return translations[language][key] || key;
+  };
+
   const formatPrice = (priceUSD) => {
     const numericPrice = parseInt(priceUSD.replace(/[^0-9]/g, ''));
     if (currency === 'PKR') {
@@ -52,7 +71,7 @@ export const AppProvider = ({ children }) => {
       currency, setCurrency,
       wishlist, toggleWishlist,
       compareList, addToCompare, removeFromCompare,
-      formatPrice
+      formatPrice, t
     }}>
       {children}
     </AppContext.Provider>

@@ -329,3 +329,37 @@
   color: var(--text-dim);
   margin-top: 1rem;
 }
+
+
+.ar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  backdrop-filter: blur(8px);
+}
+
+.ar-modal {
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  padding: 3rem;
+}
+
+.qr-placeholder {
+  background: white;
+  padding: 1rem;
+  border-radius: 12px;
+  margin: 2rem auto;
+  width: fit-content;
+}
+
+.qr-placeholder img {
+  display: block;
+}

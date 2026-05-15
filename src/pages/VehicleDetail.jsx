@@ -22,6 +22,7 @@ const VehicleDetail = () => {
   const { wishlist, toggleWishlist, formatPrice } = useApp();
   const [activeTab, setActiveTab] = useState('Specs');
   const [rotation, setRotation] = useState(0);
+  const [showAR, setShowAR] = useState(false);
 
   // Mock data
   const vehicle = {
@@ -84,10 +85,13 @@ const VehicleDetail = () => {
             animate={{ rotateY: rotation }}
             transition={{ type: 'spring', stiffness: 100 }}
             className="vehicle-main-img"
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragEnd={(e, info) => handleRotate(info.offset.x > 0 ? -1 : 1)}
           >
-            <img src={vehicle.image} alt={vehicle.name} />
+            <img src={vehicle.image} alt={vehicle.name} draggable="false" />
           </motion.div>
-          <div className="view-hint">Drag to rotate (Simulated)</div>
+          <div className="view-hint">Drag car to rotate or use buttons</div>
         </div>
 
         <div className="sticky-cta glass-card">
@@ -98,10 +102,22 @@ const VehicleDetail = () => {
               <Link to={`/configure/${id}`} className="btn-outline">
                 <Settings size={18} /> Configure
               </Link>
-              <button className="btn-outline" onClick={() => alert('Launching AR Experience... Please use your mobile device.')}>
+              <button className="btn-outline" onClick={() => setShowAR(true)}>
                 <Layers size={18} /> View in AR
               </button>
             </div>
+            {showAR && (
+              <div className="ar-overlay glass" onClick={() => setShowAR(false)}>
+                <div className="ar-modal glass-card" onClick={e => e.stopPropagation()}>
+                  <h3>AR Showroom</h3>
+                  <p>Scan this QR code with your smartphone to view the {vehicle.name} in your space.</p>
+                  <div className="qr-placeholder">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://yasirmotors.com/ar" alt="QR Code" />
+                  </div>
+                  <button className="btn-primary" onClick={() => setShowAR(false)}>Close</button>
+                </div>
+              </div>
+            )}
             <div className="contact-short">
               <button className="text-btn"><MessageSquare size={16} /> WhatsApp Inquiry</button>
             </div>
@@ -182,7 +198,7 @@ const VehicleDetail = () => {
 
             {activeTab === 'EMI Calculator' && (
               <div className="emi-calculator animate-fadeIn">
-                <EMICalc price={95000} />
+                <EMICalc price={vehicle.price} />
               </div>
             )}
           </div>
@@ -193,6 +209,7 @@ const VehicleDetail = () => {
 };
 
 const EMICalc = ({ price }) => {
+  const { formatPrice } = useApp();
   const [tenure, setTenure] = useState(60);
   const [downpayment, setDownpayment] = useState(price * 0.2);
   
@@ -205,7 +222,7 @@ const EMICalc = ({ price }) => {
     <div className="emi-calc-grid">
       <div className="emi-inputs">
         <div className="input-group">
-          <label>Down Payment ($)</label>
+          <label>Down Payment</label>
           <input 
             type="range" 
             min={price * 0.1} 
@@ -213,7 +230,7 @@ const EMICalc = ({ price }) => {
             value={downpayment} 
             onChange={(e) => setDownpayment(Number(e.target.value))} 
           />
-          <div className="input-val">${downpayment.toLocaleString()}</div>
+          <div className="input-val">{formatPrice(downpayment.toString())}</div>
         </div>
         <div className="input-group">
           <label>Tenure (Months)</label>
@@ -229,7 +246,7 @@ const EMICalc = ({ price }) => {
         <Calculator size={48} className="calc-icon" />
         <div className="emi-amount">
           <span>Monthly EMI</span>
-          <h2>${emi.toLocaleString()}</h2>
+          <h2>{formatPrice(emi.toString())}</h2>
         </div>
         <p className="emi-note">Based on 8% annual interest rate.</p>
       </div>

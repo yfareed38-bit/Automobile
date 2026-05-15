@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Heart, ArrowRightLeft, Eye } from 'lucide-react';
+import { Search, Heart, ArrowRightLeft, Eye, Settings } from 'lucide-react';
 import { useApp } from '../context/AppContext';
 import './Vehicles.css';
 
@@ -12,7 +12,7 @@ import heroImg from '../assets/images/hero.png';
 
 const Vehicles = () => {
   const [filter, setFilter] = useState('All');
-  const { wishlist, toggleWishlist, addToCompare, formatPrice } = useApp();
+  const { wishlist, toggleWishlist, addToCompare, formatPrice, t } = useApp();
   
   const vehicles = [
     { id: 1, name: 'Yasir X-SUV', category: 'SUVs', image: suvImg, price: '$85,000', specs: '500hp | AWD | 7-Seater' },
@@ -34,8 +34,8 @@ const Vehicles = () => {
       <div className="page-header section-padding">
         <div className="container">
           <span className="subtitle">Exploration</span>
-          <h1>Our <span className="gradient-text">Inventory</span></h1>
-          <p>Discover the perfect vehicle that matches your lifestyle and ambition.</p>
+          <h1>{t('inventory')}</h1>
+          <p>{t('discover')}</p>
         </div>
       </div>
 
@@ -91,7 +91,10 @@ const Vehicles = () => {
                   <div className="vehicle-footer">
                     <span className="price">{formatPrice(vehicle.price)}</span>
                     <Link to={`/vehicle/${vehicle.id}`} className="btn-primary-sm">
-                      <Eye size={16} /> Explore
+                      <Eye size={16} /> {t('explore')}
+                    </Link>
+                    <Link to={`/configure/${vehicle.id}`} className="btn-outline-sm">
+                      <Settings size={16} />
                     </Link>
                   </div>
                 </div>

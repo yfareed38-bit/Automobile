@@ -1,7 +1,14 @@
 .top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001; /* Above Navbar */
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--glass-border);
-  padding: 0.5rem 0;
+  height: 40px;
+  display: flex;
+  align-items: center;
   font-size: 0.8rem;
   color: var(--text-secondary);
 }

@@ -1,6 +1,6 @@
 .navbar {
   position: fixed;
-  top: 0;
+  top: 40px; /* Shifted for TopBar */
   left: 0;
   width: 100%;
   z-index: 1000;
