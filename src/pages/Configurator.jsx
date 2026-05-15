@@ -2,11 +2,13 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Check, Info, Save } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useApp } from '../context/AppContext';
 import evImg from '../assets/images/ev.png'; // Placeholder for visualization
 import './Configurator.css';
 
 const Configurator = () => {
   const { id } = useParams();
+  const { formatPrice } = useApp();
   
   const [config, setConfig] = useState({
     color: { name: 'Midnight Black', hex: '#0a0a0a' },
@@ -47,8 +49,8 @@ const Configurator = () => {
                 exit={{ opacity: 0 }}
                 className="car-visual"
               >
-                <div className="color-overlay" style={{ backgroundColor: config.color.hex, mixBlendMode: 'multiply' }}></div>
                 <img src={evImg} alt="Car Preview" />
+                <div className="color-overlay" style={{ backgroundColor: config.color.hex, mixBlendMode: 'hue' }}></div>
               </motion.div>
             </AnimatePresence>
             <div className="preview-info">
@@ -109,17 +111,17 @@ const Configurator = () => {
             <div className="config-summary glass-card">
               <div className="summary-row">
                 <span>Base Price</span>
-                <span>$95,000</span>
+                <span>{formatPrice('95000')}</span>
               </div>
               <div className="summary-row">
                 <span>Options</span>
-                <span>$4,500</span>
+                <span>{formatPrice('4500')}</span>
               </div>
               <div className="total-row">
                 <span>Total</span>
-                <span className="accent-text">$99,500</span>
+                <span className="accent-text">{formatPrice('99500')}</span>
               </div>
-              <button className="btn-primary w-100 mt-1">
+              <button className="btn-primary w-100 mt-1" onClick={() => alert('Configuration Saved!')}>
                 <Save size={18} /> Save Configuration
               </button>
             </div>

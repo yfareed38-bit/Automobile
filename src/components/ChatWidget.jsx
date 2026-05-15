@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { MessageCircle, X, Send, User, Bot } from 'lucide-react';
 import './ChatWidget.css';
 
@@ -8,6 +8,16 @@ const ChatWidget = () => {
     { id: 1, text: "Hello! I'm your Yasir Motors Assistant. How can I help you today?", sender: 'bot' }
   ]);
   const [input, setInput] = useState('');
+  const [isTyping, setIsTyping] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages, isTyping]);
 
   const handleSend = () => {
     if (!input.trim()) return;
@@ -15,18 +25,21 @@ const ChatWidget = () => {
     const userMsg = { id: Date.now(), text: input, sender: 'user' };
     setMessages(prev => [...prev, userMsg]);
     setInput('');
+    setIsTyping(true);
 
     // Simulate bot response
     setTimeout(() => {
       let botResponse = "I'm not sure about that. Would you like to speak with a human agent?";
       const msg = input.toLowerCase();
       
-      if (msg.includes('price')) botResponse = "Our vehicles start from $45,000. Which model are you interested in?";
-      if (msg.includes('ev') || msg.includes('electric')) botResponse = "The Yasir E-Vision is our flagship electric vehicle with 600km range.";
-      if (msg.includes('test drive')) botResponse = "You can book a test drive through our 'Book a Test Drive' page in the menu!";
+      if (msg.includes('price') || msg.includes('cost')) botResponse = "Our vehicles start from $45,000 (approx. Rs 12.6M). Which model are you interested in?";
+      if (msg.includes('ev') || msg.includes('electric')) botResponse = "The Yasir E-Vision is our flagship electric vehicle with 650km range and 2.8s acceleration.";
+      if (msg.includes('test drive') || msg.includes('book')) botResponse = "You can book a test drive or service appointment through our 'Appointments' page!";
+      if (msg.includes('location') || msg.includes('showroom')) botResponse = "We have showrooms in Karachi, Lahore, and Islamabad. Check our 'Dealers' page for details.";
       
       setMessages(prev => [...prev, { id: Date.now(), text: botResponse, sender: 'bot' }]);
-    }, 1000);
+      setIsTyping(false);
+    }, 1500);
   };
 
   return (
@@ -52,6 +65,13 @@ const ChatWidget = () => {
                 <div className="message-text">{m.text}</div>
               </div>
             ))}
+            {isTyping && (
+              <div className="message-wrapper bot">
+                <div className="message-icon"><Bot size={14} /></div>
+                <div className="message-text typing">...</div>
+              </div>
+            )}
+            <div ref={messagesEndRef} />
           </div>
           <div className="chat-input">
             <input 

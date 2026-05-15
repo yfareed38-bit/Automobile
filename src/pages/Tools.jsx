@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Calculator, Zap, Fuel, TrendingUp, Car } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 import './Tools.css';
 
 const Tools = () => {
+  const { currency } = useApp();
   const [activeTab, setActiveTab] = useState('savings');
   
   // EV Savings State
@@ -79,11 +81,11 @@ const Tools = () => {
                 <div className="savings-display">
                   <div className="savings-item">
                     <span>Monthly</span>
-                    <h2 className="accent-text">PKR {savings.monthly.toLocaleString(undefined, {maximumFractionDigits: 0})}</h2>
+                    <h2 className="accent-text">{currency === 'PKR' ? 'Rs' : '$'} {savings.monthly.toLocaleString(undefined, {maximumFractionDigits: 0})}</h2>
                   </div>
                   <div className="savings-item">
                     <span>Yearly</span>
-                    <h2 className="accent-text">PKR {savings.yearly.toLocaleString(undefined, {maximumFractionDigits: 0})}</h2>
+                    <h2 className="accent-text">{currency === 'PKR' ? 'Rs' : '$'} {savings.yearly.toLocaleString(undefined, {maximumFractionDigits: 0})}</h2>
                   </div>
                 </div>
                 <p className="savings-desc">By switching to electric with Yasir Motors, you're not just saving money, but also reducing your carbon footprint by approximately 2.4 tons of CO2 annually.</p>
@@ -116,7 +118,7 @@ const Tools = () => {
                   </select>
                 </div>
               </div>
-              <button className="btn-primary mt-2">Get Instant Estimate</button>
+              <button className="btn-primary mt-2" onClick={() => alert('Thank you! Our valuation expert will contact you within 24 hours.')}>Get Instant Estimate</button>
             </div>
           )}
         </div>

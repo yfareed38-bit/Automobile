@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { 
-  ArrowRight, ShieldCheck, Zap, Star, 
+  ArrowRight, ShieldCheck, Zap, Star, Shield, Award, ChevronRight,
   Rotate3d, Smartphone, MessageSquare, Calculator 
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
