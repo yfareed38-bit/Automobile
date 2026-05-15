@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
-  Zap, Shield, Gauge, Cpu, 
-  MessageCircle, Phone, Calendar, Download, 
-  ChevronLeft, ChevronRight, Calculator
+  ChevronRight, ArrowLeft, Star, Shield, Zap, 
+  Rotate3d, Download, MessageSquare, Info, 
+  Heart, Settings, Layers, Gauge, Cpu, 
+  ChevronLeft, Calculator
 } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 import './VehicleDetail.css';
 
 // Reuse images for demo
@@ -16,6 +18,8 @@ import heroImg from '../assets/images/hero.png';
 
 const VehicleDetail = () => {
   const { id } = useParams();
+  const navigate = useNavigate();
+  const { wishlist, toggleWishlist, formatPrice } = useApp();
   const [activeTab, setActiveTab] = useState('Specs');
   const [rotation, setRotation] = useState(0);
 
@@ -23,7 +27,7 @@ const VehicleDetail = () => {
   const vehicle = {
     name: 'Yasir E-Vision',
     tagline: 'The Pinnacle of Electric Luxury',
-    price: '$95,000',
+    price: 95000,
     image: evImg,
     description: 'The Yasir E-Vision represents a leap forward in automotive engineering. With a dual-motor setup delivering instantaneous torque and a chassis tuned for both comfort and precision.',
     specs: {
@@ -54,13 +58,19 @@ const VehicleDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="subtitle">Yasir Series</span>
-            <h1>{vehicle.name}</h1>
-            <p className="tagline">{vehicle.tagline}</p>
+            <div className="detail-actions">
+              <button 
+                className={`wishlist-btn ${wishlist.includes(parseInt(id)) ? 'active' : ''}`}
+                onClick={() => toggleWishlist(parseInt(id))}
+              >
+                <Heart size={20} fill={wishlist.includes(parseInt(id)) ? "currentColor" : "none"} />
+                {wishlist.includes(parseInt(id)) ? 'Favorited' : 'Add to Wishlist'}
+              </button>
+            </div>
           </motion.div>
           <div className="detail-price">
             <span>Starting from</span>
-            <h2>{vehicle.price}</h2>
+            <h2>{formatPrice(vehicle.price)}</h2>
           </div>
         </div>
 
@@ -80,10 +90,21 @@ const VehicleDetail = () => {
           <div className="view-hint">Drag to rotate (Simulated)</div>
         </div>
 
-        <div className="detail-ctas">
-          <button className="btn-primary"><Calendar size={20} /> Book Test Drive</button>
-          <button className="btn-outline"><MessageCircle size={20} /> WhatsApp Inquiry</button>
-          <button className="btn-outline"><Download size={20} /> Brochure PDF</button>
+        <div className="sticky-cta glass-card">
+            <h3>Interested?</h3>
+            <p className="price-label">Starting at {formatPrice(vehicle.price)}</p>
+            <div className="cta-buttons">
+              <Link to="/test-drive" className="btn-primary">Book Test Drive</Link>
+              <Link to={`/configure/${id}`} className="btn-outline">
+                <Settings size={18} /> Configure
+              </Link>
+              <button className="btn-outline" onClick={() => alert('Launching AR Experience... Please use your mobile device.')}>
+                <Layers size={18} /> View in AR
+              </button>
+            </div>
+            <div className="contact-short">
+              <button className="text-btn"><MessageSquare size={16} /> WhatsApp Inquiry</button>
+            </div>
         </div>
       </section>
 

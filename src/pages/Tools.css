@@ -1,0 +1,138 @@
+.tools-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.tab-btn {
+  background: var(--bg-tertiary);
+  color: var(--text-secondary);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  border: 1px solid var(--glass-border);
+  font-weight: 600;
+}
+
+.tab-btn.active {
+  background: var(--accent-primary);
+  color: white;
+  border-color: var(--accent-primary);
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.tool-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.input-group input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent-primary);
+}
+
+.input-group input[type="number"] {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  padding: 1rem;
+  color: var(--text-primary);
+  border-radius: var(--border-radius-md);
+  font-size: 1.1rem;
+}
+
+.input-val {
+  text-align: right;
+  font-weight: 700;
+  color: var(--accent-primary);
+  margin-top: 0.5rem;
+}
+
+.info-box {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.accent-border {
+  border: 2px solid var(--accent-primary);
+  position: relative;
+}
+
+.result-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+
+.savings-display {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.savings-item span {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.savings-item h2 {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+
+.trade-in-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--text-secondary);
+}
+
+.form-group input, .form-group select {
+  width: 100%;
+  background: var(--bg-secondary);
+  border: 1px solid var(--glass-border);
+  padding: 1rem;
+  color: var(--text-primary);
+  border-radius: var(--border-radius-md);
+}
+
+.mt-2 { margin-top: 2rem; }
+
+@media (max-width: 768px) {
+  .tool-grid, .form-grid {
+    grid-template-columns: 1fr;
+  }
+}

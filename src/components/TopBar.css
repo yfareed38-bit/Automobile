@@ -1,0 +1,57 @@
+.top-bar {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--glass-border);
+  padding: 0.5rem 0;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.top-bar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-bar-left {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.top-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.top-item select {
+  background: transparent;
+  color: inherit;
+  border: none;
+  font-size: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.top-item select option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: inherit;
+}
+
+.theme-toggle:hover {
+  color: var(--accent-primary);
+}
+
+@media (max-width: 768px) {
+  .theme-toggle span {
+    display: none;
+  }
+}

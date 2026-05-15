@@ -1,6 +1,8 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Filter, SlidersHorizontal } from 'lucide-react';
+import { Search, Heart, ArrowRightLeft, Eye } from 'lucide-react';
+import { useApp } from '../context/AppContext';
 import './Vehicles.css';
 
 import suvImg from '../assets/images/suv.png';
@@ -10,6 +12,7 @@ import heroImg from '../assets/images/hero.png';
 
 const Vehicles = () => {
   const [filter, setFilter] = useState('All');
+  const { wishlist, toggleWishlist, addToCompare, formatPrice } = useApp();
   
   const vehicles = [
     { id: 1, name: 'Yasir X-SUV', category: 'SUVs', image: suvImg, price: '$85,000', specs: '500hp | AWD | 7-Seater' },
@@ -69,17 +72,27 @@ const Vehicles = () => {
               >
                 <div className="vehicle-img-wrapper">
                   <img src={vehicle.image} alt={vehicle.name} />
+                  <div className="card-actions">
+                    <button 
+                      className={`action-btn ${wishlist.includes(vehicle.id) ? 'active' : ''}`}
+                      onClick={() => toggleWishlist(vehicle.id)}
+                    >
+                      <Heart size={18} fill={wishlist.includes(vehicle.id) ? "currentColor" : "none"} />
+                    </button>
+                    <button className="action-btn" onClick={() => addToCompare(vehicle)}>
+                      <ArrowRightLeft size={18} />
+                    </button>
+                  </div>
                 </div>
                 <div className="vehicle-info">
                   <span className="vehicle-cat">{vehicle.category}</span>
                   <h3>{vehicle.name}</h3>
                   <p className="specs">{vehicle.specs}</p>
                   <div className="vehicle-footer">
-                    <span className="price">{vehicle.price}</span>
-                    <div className="actions">
-                      <button className="btn-outline-sm">Compare</button>
-                      <button className="btn-primary-sm">Explore</button>
-                    </div>
+                    <span className="price">{formatPrice(vehicle.price)}</span>
+                    <Link to={`/vehicle/${vehicle.id}`} className="btn-primary-sm">
+                      <Eye size={16} /> Explore
+                    </Link>
                   </div>
                 </div>
               </motion.div>

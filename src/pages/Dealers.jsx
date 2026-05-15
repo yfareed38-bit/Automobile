@@ -1,4 +1,5 @@
-import { MapPin, Phone, Clock, Search, Navigation } from 'lucide-react';
+import { MapPin, Phone, Clock, Search, Navigation, CalendarCheck } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Dealers.css';
 
 const Dealers = () => {
@@ -47,7 +48,9 @@ const Dealers = () => {
                   </div>
                   <div className="dealer-actions">
                     <button className="btn-primary-sm"><Navigation size={14} /> Get Directions</button>
-                    <button className="btn-outline-sm">Book Visit</button>
+                    <Link to="/test-drive" className="btn-primary-sm">
+                      <CalendarCheck size={16} /> Book Appointment
+                    </Link>
                   </div>
                 </div>
               ))}

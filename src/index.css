@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* Color Palette - Titanium & Midnight */
+  /* Default Dark Theme - Titanium & Midnight */
   --bg-primary: #050505;
   --bg-secondary: #0f0f0f;
   --bg-tertiary: #1a1a1a;
@@ -23,6 +23,23 @@
   --border-radius-md: 8px;
   
   --container-max-width: 1400px;
+}
+
+:root[data-theme='light'] {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #e9ecef;
+  
+  --accent-primary: #0072ff;
+  --accent-secondary: #00c6ff;
+  --accent-glow: rgba(0, 114, 255, 0.2);
+  
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-dim: #888888;
+  
+  --glass-bg: rgba(0, 0, 0, 0.02);
+  --glass-border: rgba(0, 0, 0, 0.08);
 }
 
 * {
