@@ -22,8 +22,8 @@ const Blog = () => {
     },
     {
       id: 3,
-      title: 'Titan E-Vision Wins International Design Award',
-      excerpt: 'We are proud to announce that the Titan E-Vision has been recognized for its revolutionary aesthetic...',
+      title: 'Yasir E-Vision Wins International Design Award',
+      excerpt: 'We are proud to announce that the Yasir E-Vision has been recognized for its revolutionary aesthetic...',
       author: 'Marcus Thorne',
       date: 'May 05, 2026',
       category: 'New Launches'
@@ -34,7 +34,7 @@ const Blog = () => {
     <div className="blog-page">
       <div className="page-header section-padding">
         <div className="container">
-          <span className="subtitle">Titan Insights</span>
+          <span className="subtitle">Yasir Insights</span>
           <h1>News & <span className="gradient-text">Blog</span></h1>
           <p>Stay updated with the latest trends, maintenance tips, and automotive news.</p>
         </div>

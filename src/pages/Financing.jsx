@@ -70,11 +70,11 @@ const Financing = () => {
           <h2>Our Banking <span className="gradient-text">Partners</span></h2>
         </div>
         <div className="partners-grid">
-          {['Global Chase', 'Titan Bank', 'Vanguard Finance', 'Apex Credits'].map((bank) => (
+          {['Global Chase', 'Yasir Bank', 'Vanguard Finance', 'Apex Credits'].map((bank) => (
             <div key={bank} className="bank-card glass">
               <Landmark size={40} className="bank-icon" />
               <h3>{bank}</h3>
-              <p>Special rates for Titan owners.</p>
+              <p>Special rates for Yasir owners.</p>
             </div>
           ))}
         </div>
@@ -83,7 +83,7 @@ const Financing = () => {
       <section className="insurance section-padding bg-alt">
         <div className="container insurance-box glass-card">
           <div className="insurance-text">
-            <h2>Titan <span className="gradient-text">Insurance</span></h2>
+            <h2>Yasir <span className="gradient-text">Insurance</span></h2>
             <p>Comprehensive coverage including zero-depreciation and roadside assistance.</p>
             <ul className="ins-list">
               <li><ShieldCheck size={20} /> Zero Depreciation</li>

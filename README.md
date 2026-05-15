@@ -1,6 +1,6 @@
-# Titan Motors - Professional Automobile Website
+# Yasir Motors - Professional Automobile Website
 
-A high-end, premium website developed for Titan Motors, featuring a sleek dark-themed design and comprehensive automotive features.
+A high-end, premium website developed for Yasir Motors, featuring a sleek dark-themed design and comprehensive automotive features.
 
 ## Tech Stack
 - **Framework**: React (Vite)

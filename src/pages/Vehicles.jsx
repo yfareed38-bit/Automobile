@@ -12,12 +12,12 @@ const Vehicles = () => {
   const [filter, setFilter] = useState('All');
   
   const vehicles = [
-    { id: 1, name: 'Titan X-SUV', category: 'SUVs', image: suvImg, price: '$85,000', specs: '500hp | AWD | 7-Seater' },
-    { id: 2, name: 'Titan S-Executive', category: 'Sedans', image: sedanImg, price: '$72,000', specs: '400hp | RWD | Luxury' },
-    { id: 3, name: 'Titan E-Vision', category: 'EVs', image: evImg, price: '$95,000', specs: '600km Range | Dual Motor' },
-    { id: 4, name: 'Titan Sport-GTR', category: 'Luxury Series', image: heroImg, price: '$150,000', specs: '800hp | Track Ready' },
-    { id: 5, name: 'Titan Commander', category: 'Commercial Vehicles', image: suvImg, price: '$55,000', specs: 'Towing 5000kg | Diesel' },
-    { id: 6, name: 'Titan Urban-E', category: 'EVs', image: evImg, price: '$45,000', specs: '350km Range | Compact' },
+    { id: 1, name: 'Yasir X-SUV', category: 'SUVs', image: suvImg, price: '$85,000', specs: '500hp | AWD | 7-Seater' },
+    { id: 2, name: 'Yasir S-Executive', category: 'Sedans', image: sedanImg, price: '$72,000', specs: '400hp | RWD | Luxury' },
+    { id: 3, name: 'Yasir E-Vision', category: 'EVs', image: evImg, price: '$95,000', specs: '600km Range | Dual Motor' },
+    { id: 4, name: 'Yasir Sport-GTR', category: 'Luxury Series', image: heroImg, price: '$150,000', specs: '800hp | Track Ready' },
+    { id: 5, name: 'Yasir Commander', category: 'Commercial Vehicles', image: suvImg, price: '$55,000', specs: 'Towing 5000kg | Diesel' },
+    { id: 6, name: 'Yasir Urban-E', category: 'EVs', image: evImg, price: '$45,000', specs: '350km Range | Compact' },
   ];
 
   const categories = ['All', 'SUVs', 'Sedans', 'EVs', 'Commercial Vehicles', 'Luxury Series', 'Upcoming Models'];

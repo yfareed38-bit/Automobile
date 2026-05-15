@@ -9,7 +9,7 @@ const TestDrive = () => {
         <div className="container">
           <span className="subtitle">First Hand Experience</span>
           <h1>Book a <span className="gradient-text">Test Drive</span></h1>
-          <p>Feel the power and precision of a Titan. Select your model and preferred time.</p>
+          <p>Feel the power and precision of a Yasir. Select your model and preferred time.</p>
         </div>
       </div>
 
@@ -23,10 +23,10 @@ const TestDrive = () => {
                 <div className="vehicle-selector">
                    <select>
                       <option>Select Model</option>
-                      <option>Titan X-SUV</option>
-                      <option>Titan S-Executive</option>
-                      <option>Titan E-Vision</option>
-                      <option>Titan Sport-GTR</option>
+                      <option>Yasir X-SUV</option>
+                      <option>Yasir S-Executive</option>
+                      <option>Yasir E-Vision</option>
+                      <option>Yasir Sport-GTR</option>
                    </select>
                 </div>
               </div>

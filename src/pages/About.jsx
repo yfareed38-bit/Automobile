@@ -18,7 +18,7 @@ const About = () => {
           </div>
           <div className="glass-card">
             <h2>Our Vision</h2>
-            <p>A world where performance and ecology coexist in perfect harmony, powered by Titan's next-gen propulsion systems.</p>
+            <p>A world where performance and ecology coexist in perfect harmony, powered by Yasir's next-gen propulsion systems.</p>
           </div>
         </div>
       </section>

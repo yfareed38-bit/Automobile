@@ -7,7 +7,7 @@ const Contact = () => {
       <div className="page-header section-padding">
         <div className="container">
           <span className="subtitle">Get In Touch</span>
-          <h1>Contact <span className="gradient-text">Titan Motors</span></h1>
+          <h1>Contact <span className="gradient-text">Yasir Motors</span></h1>
           <p>Our experts are here to assist you with any inquiries regarding our vehicles or services.</p>
         </div>
       </div>
@@ -19,23 +19,23 @@ const Contact = () => {
               <div className="icon-wrapper"><MapPin /></div>
               <div>
                 <h3>Global Headquarters</h3>
-                <p>123 Performance Way, Silicon Valley, CA 94025, USA</p>
+                <p>123 Karachi Pakistan</p>
               </div>
             </div>
             <div className="info-item">
               <div className="icon-wrapper"><Phone /></div>
               <div>
                 <h3>Call Us</h3>
-                <p>Sales: +1 (800) TITAN-AUTO</p>
-                <p>Service: +1 (800) TITAN-CARE</p>
+                <p>Sales: +923451234567</p>
+                <p>Service: +923451234567</p>
               </div>
             </div>
             <div className="info-item">
               <div className="icon-wrapper"><Mail /></div>
               <div>
                 <h3>Email Inquiries</h3>
-                <p>info@titanmotors.com</p>
-                <p>press@titanmotors.com</p>
+                <p>info@yasirmotors.com</p>
+                <p>press@yasirmotors.com</p>
               </div>
             </div>
             <div className="info-item">

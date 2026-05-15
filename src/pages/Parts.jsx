@@ -6,7 +6,7 @@ const Parts = () => {
   const [activeCat, setActiveCat] = useState('All');
 
   const parts = [
-    { name: 'Titan Alloy Wheels', price: '$1,200', category: 'Accessories', image: 'https://via.placeholder.com/300x200?text=Wheels' },
+    { name: 'Yasir Alloy Wheels', price: '$1,200', category: 'Accessories', image: 'https://via.placeholder.com/300x200?text=Wheels' },
     { name: 'Premium Floor Mats', price: '$150', category: 'Interior', image: 'https://via.placeholder.com/300x200?text=Mats' },
     { name: 'Carbon Fiber Spoiler', price: '$850', category: 'Exterior', image: 'https://via.placeholder.com/300x200?text=Spoiler' },
     { name: 'Performance Brake Pads', price: '$450', category: 'Genuine Parts', image: 'https://via.placeholder.com/300x200?text=Brakes' },
@@ -24,7 +24,7 @@ const Parts = () => {
         <div className="container">
           <span className="subtitle">Enhance Your Drive</span>
           <h1>Parts & <span className="gradient-text">Accessories</span></h1>
-          <p>Genuine parts and premium accessories designed specifically for your Titan.</p>
+          <p>Genuine parts and premium accessories designed specifically for your Yasir.</p>
         </div>
       </div>
 
@@ -69,7 +69,7 @@ const Parts = () => {
       <section className="genuine-guarantee section-padding bg-alt">
         <div className="container guarantee-box">
           <div className="guarantee-text">
-            <h2>The Titan <span className="gradient-text">Guarantee</span></h2>
+            <h2>The Yasir <span className="gradient-text">Guarantee</span></h2>
             <p>Every genuine part is engineered to the same exacting standards as our vehicles, ensuring perfect fit and performance.</p>
             <ul className="guarantee-list">
               <li><CheckCircle size={20} /> 2-Year Warranty</li>

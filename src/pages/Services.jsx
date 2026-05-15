@@ -6,7 +6,7 @@ const Services = () => {
   const servicePackages = [
     { name: 'Silver Plan', price: '$199', features: ['Oil Change', 'Filter Replacement', '20-Point Inspection', 'Fluid Top-up'] },
     { name: 'Gold Plan', price: '$399', features: ['Full Synthetic Oil', 'Brake Inspection', 'Wheel Alignment', 'AC Sanitization', 'Wash & Wax'] },
-    { name: 'Titan Platinum', price: '$599', features: ['Full Service', 'Engine Tuning', 'Interior Detailing', 'Free Pickup/Drop', '24/7 Roadside Assist'] },
+    { name: 'Yasir Platinum', price: '$599', features: ['Full Service', 'Engine Tuning', 'Interior Detailing', 'Free Pickup/Drop', '24/7 Roadside Assist'] },
   ];
 
   return (
@@ -15,7 +15,7 @@ const Services = () => {
         <div className="container">
           <span className="subtitle">Care & Maintenance</span>
           <h1>Premium <span className="gradient-text">Services</span></h1>
-          <p>Maintain your Titan's peak performance with our certified technician network.</p>
+          <p>Maintain your Yasir's peak performance with our certified technician network.</p>
         </div>
       </div>
 
@@ -24,7 +24,7 @@ const Services = () => {
           <div className="glass-card">
             <Wrench className="service-icon" />
             <h3>Expert Repairs</h3>
-            <p>Using only genuine Titan parts and state-of-the-art diagnostic tools.</p>
+            <p>Using only genuine Yasir parts and state-of-the-art diagnostic tools.</p>
           </div>
           <div className="glass-card">
             <ShieldCheck className="service-icon" />
@@ -81,9 +81,9 @@ const Services = () => {
             <div className="form-row">
               <select>
                 <option>Select Model</option>
-                <option>Titan X-SUV</option>
-                <option>Titan S-Executive</option>
-                <option>Titan E-Vision</option>
+                <option>Yasir X-SUV</option>
+                <option>Yasir S-Executive</option>
+                <option>Yasir E-Vision</option>
               </select>
               <input type="date" />
             </div>

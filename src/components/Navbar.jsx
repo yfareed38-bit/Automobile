@@ -33,7 +33,7 @@ const Navbar = () => {
           <div className="logo-icon">
             <Car size={24} />
           </div>
-          <span className="logo-text">TITAN <span className="logo-accent">MOTORS</span></span>
+          <span className="logo-text">YASIR <span className="logo-accent">MOTORS</span></span>
         </Link>
 
         {/* Desktop Menu */}

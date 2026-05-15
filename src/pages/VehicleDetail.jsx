@@ -21,11 +21,11 @@ const VehicleDetail = () => {
 
   // Mock data
   const vehicle = {
-    name: 'Titan E-Vision',
+    name: 'Yasir E-Vision',
     tagline: 'The Pinnacle of Electric Luxury',
     price: '$95,000',
     image: evImg,
-    description: 'The Titan E-Vision represents a leap forward in automotive engineering. With a dual-motor setup delivering instantaneous torque and a chassis tuned for both comfort and precision.',
+    description: 'The Yasir E-Vision represents a leap forward in automotive engineering. With a dual-motor setup delivering instantaneous torque and a chassis tuned for both comfort and precision.',
     specs: {
       'Acceleration': '0-100 km/h in 2.8s',
       'Top Speed': '280 km/h',
@@ -54,7 +54,7 @@ const VehicleDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <span className="subtitle">Titan Series</span>
+            <span className="subtitle">Yasir Series</span>
             <h1>{vehicle.name}</h1>
             <p className="tagline">{vehicle.tagline}</p>
           </motion.div>

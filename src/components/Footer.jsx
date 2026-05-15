@@ -12,10 +12,10 @@ const Footer = () => {
               <div className="logo-icon">
                 <Car size={24} />
               </div>
-              <span className="logo-text">TITAN <span className="logo-accent">MOTORS</span></span>
+              <span className="logo-text">YASIR <span className="logo-accent">MOTORS</span></span>
             </Link>
             <p className="footer-desc">
-              Pushing the boundaries of automotive excellence. Experience the future of driving with Titan Motors.
+              Pushing the boundaries of automotive excellence. Experience the future of driving with Yasir Motors.
             </p>
             <div className="social-links">
               <a href="#"><Globe size={20} /></a>
@@ -50,21 +50,21 @@ const Footer = () => {
             <h3>Contact Info</h3>
             <div className="contact-item">
               <MapPin size={20} className="contact-icon" />
-              <span>123 Performance Way, Silicon Valley, CA</span>
+              <span>123 Karachi Pakistan</span>
             </div>
             <div className="contact-item">
               <Phone size={20} className="contact-icon" />
-              <span>+1 (800) TITAN-AUTO</span>
+              <span>+923451234567</span>
             </div>
             <div className="contact-item">
               <Mail size={20} className="contact-icon" />
-              <span>info@titanmotors.com</span>
+              <span>info@yasirmotors.com</span>
             </div>
           </div>
         </div>
 
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Titan Motors. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Yasir Motors. All rights reserved.</p>
           <div className="footer-legal">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>

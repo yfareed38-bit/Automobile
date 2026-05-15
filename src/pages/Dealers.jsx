@@ -3,10 +3,10 @@ import './Dealers.css';
 
 const Dealers = () => {
   const dealers = [
-    { name: 'Titan Flagship - Silicon Valley', address: '123 Performance Way, CA 94025', phone: '+1 (800) TITAN-01', hours: '09:00 AM - 08:00 PM' },
-    { name: 'Titan Downtown Experience', address: '500 Innovation Blvd, CA 94103', phone: '+1 (800) TITAN-02', hours: '10:00 AM - 09:00 PM' },
-    { name: 'Titan Coastal Hub', address: '88 Marina Dr, Santa Monica, CA 90401', phone: '+1 (800) TITAN-03', hours: '09:00 AM - 07:00 PM' },
-    { name: 'Titan East Service Center', address: '200 Logistics Ln, San Jose, CA 95112', phone: '+1 (800) TITAN-04', hours: '08:00 AM - 06:00 PM' },
+    { name: 'Yasir Flagship - Karachi', address: '123 Karachi Pakistan', phone: '+923451234567', hours: '09:00 AM - 08:00 PM' },
+    { name: 'Yasir Downtown Experience - Lahore', address: 'Main Blvd, Gulberg, Lahore', phone: '+923451234567', hours: '10:00 AM - 09:00 PM' },
+    { name: 'Yasir Coastal Hub - Gwadar', address: 'Marine Drive, Gwadar', phone: '+923451234567', hours: '09:00 AM - 07:00 PM' },
+    { name: 'Yasir North Service Center - Islamabad', address: 'I-9 Sector, Islamabad', phone: '+923451234567', hours: '08:00 AM - 06:00 PM' },
   ];
 
   return (

@@ -15,7 +15,7 @@ const Careers = () => {
       <div className="page-header section-padding">
         <div className="container">
           <span className="subtitle">Join the Revolution</span>
-          <h1>Work at <span className="gradient-text">Titan Motors</span></h1>
+          <h1>Work at <span className="gradient-text">Yasir Motors</span></h1>
           <p>Help us shape the future of mobility. We are looking for dreamers and doers.</p>
         </div>
       </div>
@@ -52,7 +52,7 @@ const Careers = () => {
       <section className="perks section-padding bg-alt">
         <div className="container">
           <div className="section-header text-center">
-            <h2>Why <span className="gradient-text">Titan?</span></h2>
+            <h2>Why <span className="gradient-text">Yasir?</span></h2>
           </div>
           <div className="perks-grid">
             <div className="perk-card glass-card">

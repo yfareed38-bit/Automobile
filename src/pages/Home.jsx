@@ -11,9 +11,9 @@ import evImg from '../assets/images/ev.png';
 
 const Home = () => {
   const featuredVehicles = [
-    { id: 1, name: 'Titan X-SUV', type: 'SUV', image: suvImg, price: '$85,000' },
-    { id: 2, name: 'Titan S-Executive', type: 'Sedan', image: sedanImg, price: '$72,000' },
-    { id: 3, name: 'Titan E-Vision', type: 'EV', image: evImg, price: '$95,000' },
+    { id: 1, name: 'Yasir X-SUV', type: 'SUV', image: suvImg, price: '$85,000' },
+    { id: 2, name: 'Yasir S-Executive', type: 'Sedan', image: sedanImg, price: '$72,000' },
+    { id: 3, name: 'Yasir E-Vision', type: 'EV', image: evImg, price: '$95,000' },
   ];
 
   return (
@@ -21,7 +21,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-overlay"></div>
-        <img src={heroImg} alt="Titan Hero" className="hero-bg" />
+        <img src={heroImg} alt="Yasir Hero" className="hero-bg" />
         <div className="container hero-content">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -134,7 +134,7 @@ const Home = () => {
         <div className="container">
           <div className="cta-box glass">
             <h2>Ready to take the wheel?</h2>
-            <p>Join thousands of satisfied owners and experience Titan Motors today.</p>
+            <p>Join thousands of satisfied owners and experience Yasir Motors today.</p>
             <div className="cta-btns">
               <Link to="/test-drive" className="btn-primary">Book a Test Drive</Link>
               <Link to="/contact" className="btn-outline">Talk to an Expert</Link>
